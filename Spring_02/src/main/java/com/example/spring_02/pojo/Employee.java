@@ -8,17 +8,16 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
-
 @NoArgsConstructor
 public class Employee {
     private Integer id;
     private String lastName;
     private String email;
     private Integer gender;
-    private Department department;
+    private String department;
     private Date birth;
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department) {
+    public Employee(Integer id, String lastName, String email, Integer gender, String department) {
         this.id = id;
         this.lastName = lastName;
         this.email = email;

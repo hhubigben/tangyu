@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>员工管理</title>
+		<title>寻找员工</title>
 		<!-- Bootstrap core CSS -->
 		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
@@ -50,61 +50,60 @@
 
 				<div th:replace="~{common/commons::sidebar(active='list.html')}"></div>
 
-
-
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-					<h2>
-						<form th:action="@{semp}"  method="get">
-							<div class="form-group">
-								<label></label>
-
-								<input type="text" name="lastName" class="form-control" placeholder="">
-							</div>
-							<button type="submit"  class="btn btn-primary" >查找员工</button>
-						</form>
-
-						<br>
-						<a class="btn btn-sm btn-success" th:href="@{emps}">添加员工</a>
-
-					</h2>
 
 
-						<div class="table-responsive">
+					<form th:action="@{/semp}" method="post">
 						<table class="table table-striped table-sm">
 							<thead>
-								<tr>
-									<th>id</th>
-									<th>lastName</th>
-									<th>email</th>
-									<th>gender</th>
-									<th>department</th>
-									<th>birth</th>
-									<th>操作</th>
-								</tr>
+							<tr>
+								<th>id</th>
+								<th>lastName</th>
+								<th>email</th>
+								<th>gender</th>
+								<th>department</th>
+								<th>birth</th>
+								<th>操作</th>
+							</tr>
 							</thead>
 							<tbody>
-								<!--/*@thymesVar id="emps" type="ch"*/-->
-							    	<tr th:each="emp:${emps}">
-									
+							<!--/*@thymesVar id="emps" type="ch"*/-->
+<!--							<tr th:each="emp:${semps}">-->
 
-									<td th:text="${emp.getId()}"></td>
 
-									<td th:text="${emp.getLastName()}"></td>
-									<td th:text="${emp.getEmail()}"></td>
-									<td th:text="${emp.getGender()==0?'女':'男'}"></td>
-									<td th:text="${emp.getDepartment()}"></td>
-									<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd HH:mm:ss')}"></td>
-									<td>
+<!--								<td th:text="${emp.getId()}"></td>-->
+<!--								<td th:text="${emp.getLastName()}"></td>-->
+<!--								<td th:text="${emp.getEmail()}"></td>-->
+<!--								<td th:text="${emp.getGender()==0?'女':'男'}"></td>-->
+<!--								<td th:text="${emp.department.getDepartmentName()}"></td>-->
+<!--								<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd HH:mm:ss')}"></td>-->
+<!--							</tr>-->
 
-										<a class="btn btn-sm btn-primary" th:href="@{'/emp/'+${emp.getId()}}">编辑</a>
-										<a class="btn btn-sm btn-danger" th:href="@{'/delemp/'+${emp.getId()}}">删除</a>
+							<tr >
 
-									</td>
+						     	<!--/*@thymesVar id="emp1" type="ch"*/-->
+							    <tr th:each="emp:${emp1}">
 
-								</tr>
+								<td th:text="${emp.getId()}"></td>
+								<td th:text="${emp.getLastName()}"></td>
+								<td th:text="${emp.getEmail()}"></td>
+								<td th:text="${emp.getGender()==0?'女':'男'}"></td>
+								<td th:text="${emp.getDepartment()}"></td>
+								<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd HH:mm:ss')}"></td>
+								<td>
+
+									<a class="btn btn-sm btn-primary" th:href="@{'/emp/'+${emp.getId()}}">编辑</a>
+									<a class="btn btn-sm btn-danger" th:href="@{'/delemp/'+${emp.getId()}}">删除</a>
+
+								</td>
+							</tr>
 							</tbody>
 						</table>
-					</div>
+						<button type="submit"  class="btn btn-primary">确定</button>
+					</form>
+
+
+
 				</main>
 			</div>
 		</div>

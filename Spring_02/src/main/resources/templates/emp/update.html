@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>Dashboard Template for Bootstrap</title>
+		<title>更新员工</title>
 		<!-- Bootstrap core CSS -->
 		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
@@ -74,14 +74,16 @@
 							<label class="form-check-label">女</label>
 						</div>
 
+
 						<div class="form-group">
 							<label>department</label>
-							<select class="form-control" name="department.id">
+							<select class="form-control" name="department">
 								<!--/*@thymesVar id="departments" type="ch"*/-->
 								<!--/*@thymesVar id="getDepartmentName" type="ch"*/-->
-								<option th:selected="${dept.getId()==emp.getDepartment().getId()}" th:each="dept:${departments}" th:text="${dept.getDepartmentName()}"
-										th:value="${dept.getId()}"></option>
+								<option th:each="dept:${departments}"
+										th:text="${dept.getDepartmentName()}"
 
+										th:value="${dept.getDepartmentName()}"></option>
 							</select>
 
 							<label>Birth</label>
