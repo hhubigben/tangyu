@@ -62,7 +62,7 @@
 								<th>email</th>
 								<th>gender</th>
 								<th>department</th>
-								<th>birth</th>
+<!--								<th>birth</th>-->
 								<th>操作</th>
 							</tr>
 							</thead>
@@ -89,7 +89,7 @@
 								<td th:text="${emp.getEmail()}"></td>
 								<td th:text="${emp.getGender()==0?'女':'男'}"></td>
 								<td th:text="${emp.getDepartment()}"></td>
-								<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd HH:mm:ss')}"></td>
+<!--								<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd HH:mm:ss')}"></td>-->
 								<td>
 
 									<a class="btn btn-sm btn-primary" th:href="@{'/emp/'+${emp.getId()}}">编辑</a>

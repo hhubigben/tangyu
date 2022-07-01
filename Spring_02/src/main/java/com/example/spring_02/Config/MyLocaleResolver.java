@@ -18,9 +18,7 @@ public class MyLocaleResolver implements LocaleResolver {
     public Locale resolveLocale(HttpServletRequest request) {
         //获取请求中的参数链接
         String language = request.getParameter("lang");
-
         Locale locale =Locale.getDefault();//如果没有就默认的
-
         //如果不为空，就是我们传过来的
         if(!StringUtils.isEmpty(language))
         {
@@ -32,9 +30,6 @@ public class MyLocaleResolver implements LocaleResolver {
 
     @Override
     public void setLocale(HttpServletRequest request, HttpServletResponse response, Locale locale) {
-
     }
-
-
 
 }

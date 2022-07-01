@@ -13,7 +13,7 @@ public class Employee {
     private Integer id;
     private String lastName;
     private String email;
-    private Integer gender;
+    private Integer gender=1;
     private String department;
     private Date birth;
 
@@ -22,6 +22,7 @@ public class Employee {
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
+
         this.department = department;
         //默认的创建日期
         this.birth = new Date();

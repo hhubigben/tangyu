@@ -27,34 +27,9 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public LocaleResolver localeResolver(){
         return new MyLocaleResolver();
     }
-
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html",
                 "/","/user/login","/css/**","/js/**","/img/**","/cjj.html");
     }
-
-
-
-
-
-
-
-    //扩展视图解析器
-    //ViewResolver 实现了视图解析器接口的类   可以给他看做是视图解析器
-//@Bean
-//public ViewResolver myViewResolver()
-//{
-//    return new Myviewresolver();
-//}
-
-
-//   // 自己定义一个视图解析器
-//public static class Myviewresolver implements ViewResolver {
-//    @Override
-//    public View resolveViewName(String viewName, Locale locale) throws Exception {
-//        return null;
-//    }
-//}
 }
